@@ -1,0 +1,11 @@
+# Python virtual environments
+venv/
+.venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# IDE / OS clutter
+*.egg-info/
+.DS_Store
