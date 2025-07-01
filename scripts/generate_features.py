@@ -36,12 +36,18 @@ def main():
         # 2b. Extract regex clue counts
         scores = extract_language_clues(text)
 
-        # 2c. Build a record dict
+        # 2c. Determine the ground‐truth label
+        label = infer_label_from_filename(wav_path)
+
+
+        # 2d. Build a record dict
         rec = {
-            "filename": os.path.basename(wav_path),
-            "transcript": text.strip(),
-            **scores,  # merges in Spanish, Portuguese, Italian counts
-            "label": infer_label_from_filename(wav_path)
+                "filename": os.path.basename(wav_path),
+                "transcript": text.strip(),
+                "spanish_hits": scores["Spanish"],
+                "portuguese_hits": scores["Portuguese"],
+                "italian_hits": scores["Italian"],
+                "label": label
         }
         records.append(rec)
 
