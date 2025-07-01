@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-import os
+import os, sys
+sys.path.insert(0, os.path.abspath(os.path.join(__file__, "..", "..")))
+
 import glob
 import whisper
 import pandas as pd
