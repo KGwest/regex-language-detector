@@ -28,12 +28,6 @@ A lightweight, explainable pipeline for detecting Romance languages (and dialect
      - Extracts regex counts  
      - Builds and writes `data/features.csv`
 
-3. **Version control & packaging**  
-   - `venv/` is ignored.  
-   - Virtual environment with `requirements.txt`.  
-   - FFmpeg integration for robust audio loading.  
-   - MIT `LICENSE` added.
-
 ---
 
 ## Quickstart
@@ -63,3 +57,17 @@ python scripts/generate_features.py
 
 # 7. Train & evaluate Naive Bayes
 python train_naive_bayes.py data/features.csv
+
+```
+## Dependencies
+  -Python 3.8+
+  -openai-whisper — Whisper ASR (PyPI)
+  -scikit-learn — MultinomialNB classifier & train/test utilities (PyPI)
+  -pandas — DataFrame creation & CSV I/O (PyPI)
+  -ffmpeg — System‐level audio pre‐processing (ensure ffmpeg is on your PATH)
+  -Python’s built-in re — Regex matching for all language & dialect clues
+  -All other package versions are pinned in requirements.txt. Install everything with:
+
+```bash
+
+pip install -r requirements.txt
